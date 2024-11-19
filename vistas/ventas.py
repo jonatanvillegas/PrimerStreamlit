@@ -31,7 +31,8 @@ if par_Pais !="":
 if par_Fertilidad >0:
     dfDatos= dfDatos[dfDatos["fertility"]>=par_Fertilidad]
     
-dfDatos =dfDatos [(dfDatos["lifeExpectancy"]>=par_RangoExpectatiDeVida[0]) & (dfDatos["lifeExpectancy"]<=par_RangoExpectatiDeVida)]
+dfDatos = dfDatos[(dfDatos["lifeExpectancy"] >= par_RangoExpectatiDeVida[0]) & (dfDatos["lifeExpectancy"] <= par_RangoExpectatiDeVida[1])]
+
 
 st.metric("Registros Totales", len (dfDatos))
 st.dataframe(dfDatos, use_container_width=True)
